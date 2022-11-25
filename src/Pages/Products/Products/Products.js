@@ -6,7 +6,7 @@ import Product from '../../Product/Product/Product';
 const Products = () => {
     const update = useLoaderData();
 
-    console.log(update);
+    console.log("This is update", update[0].category);
 
     // console.log(category)
     // console.log("new category", newCategory)
@@ -20,6 +20,7 @@ const Products = () => {
     // console.log(product)
     return (
         <div>
+            <h2 className='mt-4'>List of {update[0].category} Car</h2>
             {
                 update.map(car => <Product
                     key={car._id}

@@ -1,18 +1,19 @@
 import React from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Product.css'
 
 const Product = ({ car }) => {
     const { photo, name, location, category, resalePrice, orginalPrice, useYear, seller } = car;
-    console.log(car.resalePrice)
+    // console.log(car.resalePrice)
     return (
-        <div>
+        <div className='mt-4'>
             <Container>
-                <Row className='car-bdr'>
+                <Row className='car-bdr p-4'>
                     <Col><img className='car-img' src={photo} alt=""></img></Col>
                     <Col>
 
-                        <Card.Body className='mt-4'>
+                        <Card.Body className='mt-4 p-4'>
                             <Card.Title className='mt-2'>
                                 Car Model: {name}
                             </Card.Title>
@@ -32,7 +33,7 @@ const Product = ({ car }) => {
                                 Seller Name: {seller}
                             </Card.Title>
 
-                            <Button className='mt-2' variant="primary">Go somewhere</Button>
+                            <Link to={`/book/${car._id}`}><Button className='mt-2' variant="primary">Book Now</Button></Link>
                         </Card.Body>
 
                     </Col>

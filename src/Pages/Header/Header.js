@@ -23,8 +23,8 @@ const Header = () => {
                     <Navbar.Brand href='/'>
                         <img
                             src={photo}
-                            width="220"
-                            height="50"
+                            width="200"
+                            height="60"
                             className="d-inline-block align-top"
                             alt="logo"
                         />
