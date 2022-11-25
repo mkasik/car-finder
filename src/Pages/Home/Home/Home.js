@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import img1 from './one.jpg';
 import img2 from './two.jpg';
 import img3 from './three.jpg';
 import './Home.css'
+import Category from '../../Category/Category/Category';
+import Products from '../../Products/Products/Products';
+
 
 
 
 const Home = () => {
-
+    const [categorys, setCategorys] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/category')
+            .then(res => res.json())
+            .then(data => setCategorys(data))
+    }, [])
+    console.log(categorys)
     return (
         <div>
             <Carousel fade>
@@ -46,6 +55,16 @@ const Home = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
+            <h2>Select Your Brand</h2>
+            {
+                categorys.map(category => <Category
+                    key={category._id}
+                    category={category}
+                ></Category>)
+            }
+
+
+
         </div>
     );
 };
