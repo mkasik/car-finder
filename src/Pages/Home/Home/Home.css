@@ -1,3 +1,9 @@
 .slide-img {
     height: 500px;
 }
+
+.main {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}

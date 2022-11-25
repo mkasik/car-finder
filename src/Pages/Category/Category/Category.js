@@ -3,6 +3,7 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Products from '../../Products/Products/Products';
+import './Category.css'
 
 const Category = ({ category }) => {
     const { category_name, category_id, img } = category
@@ -10,19 +11,19 @@ const Category = ({ category }) => {
     // console.log(category)
 
     return (
-        <div className='d-flex'>
+        <div className=''>
 
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={img} />
+                <Card.Img className='card-img' variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{category_name}</Card.Title>
                     <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                        We have more {category_name} car. You can see all car and details by clicking see all product button.
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Link to={`/category/${category_id}`}><Button className='w-100' variant="primary">See All Product</Button></Link>
                 </Card.Body>
             </Card>
+
 
         </div>
     );

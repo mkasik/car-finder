@@ -56,12 +56,14 @@ const Home = () => {
                 </Carousel.Item>
             </Carousel>
             <h2>Select Your Brand</h2>
-            {
-                categorys.map(category => <Category
-                    key={category._id}
-                    category={category}
-                ></Category>)
-            }
+            <div className='main container'>
+                {
+                    categorys.map(category => <Category
+                        key={category._id}
+                        category={category}
+                    ></Category>)
+                }
+            </div>
 
 
 
