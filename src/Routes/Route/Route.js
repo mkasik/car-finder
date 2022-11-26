@@ -3,6 +3,8 @@ import DashboardLayout from "../../Layout/DashboardLayout";
 import Main from "../../Layout/Main";
 import AddCar from "../../Pages/AddCar/AddCar";
 import AddProduct from "../../Pages/AddProduct/AddProduct";
+import AllBuyers from "../../Pages/AllBuyers/AllBuyers";
+import AllSellers from "../../Pages/AllSellers/AllSellers";
 import Category from "../../Pages/Category/Category/Category";
 import Welcome from "../../Pages/Dashboard/Welcome";
 
@@ -13,6 +15,7 @@ import MyOrders from "../../Pages/MyOrders/MyOrders";
 import MyProducts from "../../Pages/MyProducts/MyProducts";
 import Products from "../../Pages/Products/Products/Products";
 import Register from "../../Pages/Register/Register/Register";
+import ReportedItem from "../../Pages/ReportedItem/ReportedItem";
 
 
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -80,6 +83,18 @@ export const routes = createBrowserRouter([
             {
                 path: '/dashboard/myorders',
                 element: <MyOrders></MyOrders>
+            },
+            {
+                path: '/dashboard/allsellers',
+                element: <AllSellers></AllSellers>
+            },
+            {
+                path: '/dashboard/allbuyers',
+                element: <AllBuyers></AllBuyers>
+            },
+            {
+                path: '/dashboard/reporteditem',
+                element: <ReportedItem></ReportedItem>
             },
 
         ]
