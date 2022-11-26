@@ -10,7 +10,7 @@ import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const Register = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext);
-
+    const navigate = useNavigate()
     const handleSubmit = event => {
 
         event.preventDefault();
@@ -19,13 +19,14 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
+        const test = form.test.value;
         console.log(name, photoURL, email, password);
         createUser(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
-
+                saveuser(name, email, test);
                 handleUpdateUserProfile(name, photoURL);
             })
             .catch(e => console.error(e));
@@ -39,6 +40,21 @@ const Register = () => {
         return updateUserProfile(profile)
             .then(() => { })
             .catch(error => console.error(error));
+    }
+    const saveuser = (name, email, role) => {
+        const user = { name, email, role }
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                navigate('/login')
+            })
     }
     return (
         <div className='register-bg'>
@@ -97,6 +113,10 @@ const Register = () => {
                         <Form.Group className="" controlId="formBasicPassword">
                             <Form.Label className='password-text'>Password</Form.Label>
                             <Form.Control className='' type="password" placeholder="Your Password" name='password' required />
+                        </Form.Group>
+                        <Form.Group className="" >
+                            <input className='' type="radio" value="user" name="test" /> User
+                            <input className='ms-4 mt-4' type="radio" value="seller" name="test" /> Seller
                         </Form.Group>
 
                         <Button className='mt-2' variant="primary" type="submit">

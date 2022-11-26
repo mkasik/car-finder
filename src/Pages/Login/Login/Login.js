@@ -5,13 +5,16 @@ import { Button, Form } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 
 const Login = () => {
     const [error, setError] = useState('');
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const { signIn, googleProviderLogin } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
@@ -25,8 +28,9 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 console.log(user.uid);
-                alert('Login Succesfully');
+
                 form.reset();
+                navigate(from, { replace: true });
 
             })
             .catch(e => {
@@ -40,6 +44,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, { replace: true });
             })
             .catch(error => console.error(error))
     }
