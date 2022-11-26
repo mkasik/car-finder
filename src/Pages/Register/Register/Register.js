@@ -115,7 +115,7 @@ const Register = () => {
                             <Form.Control className='' type="password" placeholder="Your Password" name='password' required />
                         </Form.Group>
                         <Form.Group className="" >
-                            <input className='' type="radio" value="user" name="test" /> User
+                            <input className='' type="radio" value="user" name="test" defaultChecked /> User
                             <input className='ms-4 mt-4' type="radio" value="seller" name="test" /> Seller
                         </Form.Group>
 

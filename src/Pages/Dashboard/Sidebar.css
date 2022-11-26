@@ -1,3 +1,28 @@
 .round {
-    border-radius: 100px;
+    margin-top: 10px;
+    margin-left: 20%;
+    border-radius: 100%;
+}
+
+
+
+.bdr {
+
+    width: 100%;
+    margin-left: 50px;
+
+
+
+}
+
+.btnn {
+    margin-top: 150px;
+}
+
+.dash {
+    text-decoration: none;
+}
+
+.mm {
+    border-top: 2px solid yellow;
 }
