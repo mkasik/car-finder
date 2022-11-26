@@ -5,8 +5,7 @@ import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Seller = () => {
     const { user } = useContext(AuthContext);
-    console.log(user.displayName
-    )
+    // console.log(user.displayName)
     return (
         <div>
             <div className=''>

@@ -9,6 +9,7 @@ import Welcome from "../../Pages/Dashboard/Welcome";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import MyBuyers from "../../Pages/MyBuyers/MyBuyers";
+import MyOrders from "../../Pages/MyOrders/MyOrders";
 import MyProducts from "../../Pages/MyProducts/MyProducts";
 import Products from "../../Pages/Products/Products/Products";
 import Register from "../../Pages/Register/Register/Register";
@@ -76,6 +77,11 @@ export const routes = createBrowserRouter([
                 path: '/dashboard/mybuyers',
                 element: <MyBuyers></MyBuyers>
             },
+            {
+                path: '/dashboard/myorders',
+                element: <MyOrders></MyOrders>
+            },
+
         ]
     }
 

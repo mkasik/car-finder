@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import Buyer from '../Buyer/Buyer';
 import Profile from '../Profile/Profile';
 import Seller from '../Seller/Seller';
 import './Sidebar.css'
@@ -16,16 +17,19 @@ const Sidebar = () => {
             .then(res => res.json())
             .then(data => setUsers(data));
     }, [])
-    console.log('all user:', users);
+    // console.log('all user:', users);
     const data = users.filter(dd => dd.email === user.email);
-    console.log('this is email:', data[0].role)
+    // console.log('this is email:', data[0].role)
+
 
     return (
         <div >
 
             <Profile></Profile>
+            {
+                data[0]?.role === "user" ? <Buyer></Buyer> : <Seller></Seller>
+            }
 
-            <Seller></Seller>
 
 
 
