@@ -8,7 +8,7 @@ const Seller = () => {
     // console.log(user.displayName)
     return (
         <div>
-            <div className=''>
+            <div className='items'>
                 <Link to={'/dashboard/addproduct'} className='text-white dash '><Card.Title className='text-center mt-4'>Add A Product</Card.Title></Link>
                 <Link to={'/dashboard/myproducts'} className='text-white dash '><Card.Title className='text-center mt-2'>My Products</Card.Title></Link>
                 <Link to={'/dashboard/mybuyers'} className='text-white dash '><Card.Title className='text-center mt-2'>My Buyers</Card.Title></Link>

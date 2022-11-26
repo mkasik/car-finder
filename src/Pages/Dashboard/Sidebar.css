@@ -1,6 +1,6 @@
 .round {
     margin-top: 10px;
-    margin-left: 20%;
+
     border-radius: 100%;
 }
 
@@ -15,8 +15,8 @@
 
 }
 
-.btnn {
-    margin-top: 150px;
+.items {
+    min-height: 250px;
 }
 
 .dash {
@@ -25,4 +25,12 @@
 
 .mm {
     border-top: 2px solid yellow;
+}
+
+@media only screen and (max-width: 600px) {
+
+
+    .btnn {
+        margin-bottom: 10px;
+    }
 }
