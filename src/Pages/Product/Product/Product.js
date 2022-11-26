@@ -38,6 +38,7 @@ const Product = ({ car }) => {
                             </Card.Title>
 
                             <Link ><Button onClick={handleShow} className='mt-2' variant="primary">Book Now</Button></Link>
+                            <Link ><Button className='mt-2 ms-2' variant="warning">Report To Admin</Button></Link>
                         </Card.Body>
 
                     </Col>
