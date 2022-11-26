@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Seller = () => {
+    const { user } = useContext(AuthContext);
+    console.log(user.displayName
+    )
     return (
         <div>
             <div className=''>

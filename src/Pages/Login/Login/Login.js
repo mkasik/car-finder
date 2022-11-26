@@ -28,15 +28,17 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 console.log(user.uid);
-
-                form.reset();
                 navigate(from, { replace: true });
+                form.reset();
+
+
 
             })
             .catch(e => {
                 console.error(e)
                 setError(e.message)
             });
+
     }
     const handleGoogleSignIn = () => {
 
@@ -44,9 +46,25 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                navigate(from, { replace: true });
+                saveuser(user.displayName, user.email, "user")
+
             })
             .catch(error => console.error(error))
+    }
+    const saveuser = (name, email, role) => {
+        const user = { name, email, role }
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                navigate(from, { replace: true });
+            })
     }
     return (
         <div className='login-bg'>
