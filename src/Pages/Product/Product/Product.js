@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Card, Col, Container, Modal, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Form, Modal, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Product.css'
 
@@ -45,16 +45,55 @@ const Product = ({ car }) => {
                 </Row>
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
+                        <Modal.Title>You can book now</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                    <Modal.Body>
+                        <Form>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Product Name</Form.Label>
+                                <Form.Control type="text" placeholder="Product Name" />
+
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Price</Form.Label>
+                                <Form.Control type="text" placeholder="Price" />
+
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Name</Form.Label>
+                                <Form.Control type="text" placeholder="name" />
+
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Email address</Form.Label>
+                                <Form.Control type="email" placeholder="Enter email" />
+
+                            </Form.Group>
+
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Your Phone Number</Form.Label>
+                                <Form.Control type="text" placeholder="Your Number" />
+
+                            </Form.Group>
+
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Label>Meeting Location</Form.Label>
+                                <Form.Control type="text" placeholder="Meeting Locaation" />
+                            </Form.Group>
+                            <Button className='w-100' variant="primary" type="submit">
+                                Submit
+                            </Button>
+
+                        </Form>
+
+                    </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
+                        {/* <Button variant="secondary" onClick={handleClose}>
                             Close
-                        </Button>
-                        <Button variant="primary" onClick={handleClose}>
-                            Save Changes
-                        </Button>
+                        </Button> */}
+                        {/* <Button variant="primary" onClick={handleClose}>
+                            Book Now
+                        </Button> */}
                     </Modal.Footer>
                 </Modal>
             </Container>
