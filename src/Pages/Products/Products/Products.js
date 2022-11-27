@@ -6,7 +6,8 @@ import Product from '../../Product/Product/Product';
 const Products = () => {
     const update = useLoaderData();
 
-    console.log("This is update", update[0].category);
+
+    // console.log("This is update", update[0].category);
 
     // console.log(category)
     // console.log("new category", newCategory)
