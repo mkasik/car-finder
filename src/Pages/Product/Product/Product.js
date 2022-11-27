@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Button, Card, Col, Container, Form, Modal, Row, Toast } from 'react-bootstrap';
+import { Button, Card, Col, Container, Form, Modal, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Product.css';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
@@ -21,15 +21,16 @@ const Product = ({ car }) => {
         const form = event.target;
         const number = form.number.value;
         const meeting = form.meeting.value;
-        saveBooking(name, resalePrice, user.displayName, user.email, number, meeting);
+        saveBooking(name, photo, resalePrice, user.displayName, user.email, number, meeting);
 
         form.reset();
-        handleClose()
+        handleClose();
+
 
     }
 
-    const saveBooking = (productName, price, userName, email, number, meetingLocation) => {
-        const user = { productName, price, userName, email, number, meetingLocation }
+    const saveBooking = (productName, productImg, price, userName, email, number, meetingLocation) => {
+        const user = { productName, productImg, price, userName, email, number, meetingLocation }
         fetch('http://localhost:5000/booking', {
             method: 'POST',
             headers: {
@@ -40,7 +41,19 @@ const Product = ({ car }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-
+                if (data.acknowledged) {
+                    alert('Book Success');
+                    toast.success(' Success', {
+                        position: "top-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
+                }
 
             })
     }
