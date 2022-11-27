@@ -3,7 +3,7 @@ import { Button, Card, Col, Container, Form, Modal, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import './Product.css';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 const Product = ({ car }) => {
     const { user } = useContext(AuthContext);
     // console.log("this is User: ", user)
@@ -42,17 +42,12 @@ const Product = ({ car }) => {
             .then(data => {
                 console.log(data);
                 if (data.acknowledged) {
-                    alert('Book Success');
-                    toast.success(' Success', {
-                        position: "top-center",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "light",
+                    alert('Success');
+                    toast.success('Booked  Succesfully !', {
+                        position: toast.POSITION.TOP_RIGHT
                     });
+
+
                 }
 
             })
@@ -132,6 +127,7 @@ const Product = ({ car }) => {
                             <Button className='w-100' variant="primary" type="submit">
                                 Book Now
                             </Button>
+                            <ToastContainer />
 
                         </Form>
 
@@ -146,6 +142,7 @@ const Product = ({ car }) => {
                     </Modal.Footer>
                 </Modal>
             </Container>
+
         </div>
     );
 };

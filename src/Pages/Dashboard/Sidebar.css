@@ -2,6 +2,7 @@
     margin-top: 10px;
 
     border-radius: 100%;
+    margin-bottom: 10px;
 }
 
 
@@ -16,7 +17,7 @@
 }
 
 .items {
-    min-height: 250px;
+    min-height: 240px;
 }
 
 .dash {
@@ -25,6 +26,10 @@
 
 .mm {
     border-top: 2px solid yellow;
+}
+
+.btnn {
+    margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 600px) {

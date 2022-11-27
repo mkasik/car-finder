@@ -23,6 +23,7 @@ const MyOrders = () => {
                 <thead>
                     <tr>
                         <th>SL</th>
+                        <th>Photo</th>
                         <th>Name</th>
                         <th>Price</th>
                         <th>Payment</th>
@@ -33,7 +34,8 @@ const MyOrders = () => {
                         order.map((booking, i) =>
                             <tr>
                                 <td>{i + 1}</td>
-                                <td>{booking.productName}</td>
+                                <td><img className='round me-4' height={30} alt='' src={booking.productImg}></img></td>
+                                <td className='me-4'>{booking.productName}</td>
                                 <td>{booking.price}</td>
                                 <td><Button>Pay</Button></td>
                             </tr>

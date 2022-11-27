@@ -13,6 +13,7 @@ import Login from "../../Pages/Login/Login/Login";
 import MyBuyers from "../../Pages/MyBuyers/MyBuyers";
 import MyOrders from "../../Pages/MyOrders/MyOrders";
 import MyProducts from "../../Pages/MyProducts/MyProducts";
+import NotFound from "../../Pages/NotFound/NotFound";
 import Products from "../../Pages/Products/Products/Products";
 import Register from "../../Pages/Register/Register/Register";
 import ReportedItem from "../../Pages/ReportedItem/ReportedItem";
@@ -98,6 +99,10 @@ export const routes = createBrowserRouter([
             },
 
         ]
+    },
+    {
+        path: '*',
+        element: <NotFound></NotFound>
     }
 
 ])
