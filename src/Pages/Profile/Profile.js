@@ -9,8 +9,8 @@ const Profile = () => {
             <div>
                 <img height={150} width={150} className="round" alt='' src={user.photoURL
                 }></img>
-                <Card.Title className='text-center'>{user.displayName}</Card.Title>
-                <p className='text-center '>Email: {user.email}</p>
+                <Card.Title className='text-center text-white'>{user.displayName}</Card.Title>
+                <p className='text-center text-white '>Email: {user.email}</p>
             </div>
             <div className='mm'>
 

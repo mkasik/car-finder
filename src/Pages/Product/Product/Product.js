@@ -54,7 +54,7 @@ const Product = ({ car }) => {
 
 
     return (
-        <div className='mt-4'>
+        <div className='mt-4 '>
             <Container>
                 <Row className='car-bdr p-4'>
                     <Col><img className='car-img' src={photo} alt=""></img></Col>

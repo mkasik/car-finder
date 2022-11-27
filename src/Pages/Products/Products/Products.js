@@ -20,8 +20,8 @@ const Products = () => {
     // const product = products.filter(pd => pd.category_id === 1)
     // console.log(product)
     return (
-        <div>
-            <h2 className='mt-4'>List of {update[0].category} Car</h2>
+        <div className='product-bg'>
+            <h2 className=''>List of {update[0].category} Car</h2>
             {
                 update.map(car => <Product
                     key={car._id}

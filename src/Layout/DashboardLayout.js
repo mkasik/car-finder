@@ -12,8 +12,8 @@ const DashboardLayout = () => {
             <Header></Header>
             <Container>
                 <Row className='dashbord-height'>
-                    <Col className='bg-success' md={3}><Sidebar></Sidebar></Col>
-                    <Col className='bg-warning' md={9}><Outlet></Outlet></Col>
+                    <Col className='side-bg' md={3}><Sidebar></Sidebar></Col>
+                    <Col className='right-bg' md={9}><Outlet></Outlet></Col>
 
                 </Row>
 

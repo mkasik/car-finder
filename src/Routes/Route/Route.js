@@ -5,6 +5,7 @@ import AddCar from "../../Pages/AddCar/AddCar";
 import AddProduct from "../../Pages/AddProduct/AddProduct";
 import AllBuyers from "../../Pages/AllBuyers/AllBuyers";
 import AllSellers from "../../Pages/AllSellers/AllSellers";
+import Blog from "../../Pages/Blog/Blog";
 import Category from "../../Pages/Category/Category/Category";
 import Welcome from "../../Pages/Dashboard/Welcome";
 
@@ -45,6 +46,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>,
+
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>,
 
             },
             {

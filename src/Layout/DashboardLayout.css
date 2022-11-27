@@ -1,3 +1,11 @@
 .dashbord-height {
     min-height: 85vh;
 }
+
+.side-bg {
+    background-color: rgb(11, 35, 84);
+}
+
+.right-bg {
+    background-color: whitesmoke;
+}
