@@ -118,7 +118,6 @@ const Register = () => {
                             <input className='' type="radio" value="user" name="test" defaultChecked /> User
                             <input className='ms-4 mt-4' type="radio" value="seller" name="test" /> Seller
                         </Form.Group>
-
                         <Button className='mt-2' variant="primary" type="submit">
                             Sign Up
                         </Button>
