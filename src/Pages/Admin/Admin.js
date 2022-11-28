@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Admin = () => {
+    const { logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
     return (
         <div>
             <div className='items'>
@@ -11,7 +19,7 @@ const Admin = () => {
                 <Link to={'/dashboard/reporteditem'} className='text-white dash '><Card.Title className='text-center mt-2'>Reported Items </Card.Title></Link>
             </div>
             <div>
-                <Link>   <Button className='w-100 btnn' variant="warning">Log Out</Button></Link>
+                <Link>   <Button onClick={handleLogOut} className='w-100 btnn' variant="warning">Log Out</Button></Link>
             </div>
         </div>
     );

@@ -6,6 +6,8 @@ import img3 from './three.jpg';
 import './Home.css'
 import Category from '../../Category/Category/Category';
 import Products from '../../Products/Products/Products';
+import Advertise from '../../Advertise/Advertise';
+import Testimonial from '../../Testimonial/Testimonial';
 
 
 
@@ -17,7 +19,14 @@ const Home = () => {
             .then(res => res.json())
             .then(data => setCategorys(data))
     }, [])
-    console.log(categorys)
+    const [advertises, setAdvertises] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/advertise')
+            .then(res => res.json())
+            .then(data => setAdvertises(data))
+    }, [])
+    // const cc = advertises;
+    // console.log(categorys)
     return (
         <div>
             <Carousel fade>
@@ -65,7 +74,15 @@ const Home = () => {
                 }
             </div>
 
+            <div>
+                {
+                    advertises?.length > 0 ?
+                        <Advertise data={advertises} ></Advertise>
 
+                        : <></>
+                }
+            </div>
+            <Testimonial></Testimonial>
 
         </div>
     );

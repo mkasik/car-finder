@@ -52,7 +52,28 @@ const Product = ({ car }) => {
             })
     }
 
+    const handleReport = (name, price, seller) => {
+        console.log("Test click", name, price, seller)
+        const report = { name, price, seller }
+        fetch('http://localhost:5000/reports', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(report)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.acknowledged) {
 
+                    toast.success("Reported Success")
+
+
+                }
+
+            })
+    }
     return (
         <div className='mt-4 '>
             <Container>
@@ -81,7 +102,7 @@ const Product = ({ car }) => {
                             </Card.Title>
 
                             <Link ><Button onClick={() => handleBook(_id)} className='mt-2' variant="primary">Book Now</Button></Link>
-                            <Link ><Button className='mt-2 ms-2' variant="warning">Report To Admin</Button></Link>
+                            <Link ><Button onClick={() => handleReport(name, resalePrice, seller)} className='mt-2 ms-2' variant="warning">Report To Admin</Button></Link>
                         </Card.Body>
 
                     </Col>

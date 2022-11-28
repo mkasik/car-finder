@@ -20,7 +20,7 @@ const Sidebar = () => {
     }, [])
     // console.log('all user:', users);
     const data = users.filter(dd => dd.email === user.email);
-    // console.log('this is email:', data[0].role)
+    console.log('this is email:', data, "user:", user)
 
 
     return (
@@ -33,7 +33,8 @@ const Sidebar = () => {
 
 
             {
-                data[0]?.role === "user" ? <Buyer></Buyer> : data[0]?.role === "seller" ? <Seller></Seller> : <Admin></Admin>
+                data[0]?.role === "user" ? <Buyer></Buyer> : data[0]?.role === "seller" ? <Seller></Seller>
+                    : data[0]?.role === "admin" ? <Admin></Admin> : <h2 className='text-white'>Server Crashed</h2>
             }
 
 

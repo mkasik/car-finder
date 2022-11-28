@@ -1,0 +1,9 @@
+.review-img {
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+}
+
+.bgg {
+    background-color: rgb(248, 248, 248);
+}
