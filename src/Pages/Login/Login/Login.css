@@ -3,6 +3,10 @@
     width: 300px;
 }
 
+.body {
+    overflow: hidden;
+}
+
 .login-bg {
     background-image: url(https://hadiryuk.id/img/bg/bg-login-admin.png);
     height: 400px;
@@ -15,6 +19,9 @@
 
 }
 
+
+
+
 .text {
     color: white;
     text-decoration: none;
@@ -22,4 +29,35 @@
 
 .text:hover {
     color: yellow;
+}
+
+.tt {
+    margin-top: -30px;
+}
+
+@media only screen and (max-width: 600px) {
+    .log-img {
+        display: none;
+    }
+
+    .tt {
+        margin-top: -80px;
+    }
+
+    /* .bdr {
+        min-height: 80vh;
+        width: 100%;
+    }
+
+    .log-text {
+        margin-top: -80px;
+        width: 200px;
+    }
+
+    .log-text2 {
+
+        width: 200px;
+    } */
+
+
 }

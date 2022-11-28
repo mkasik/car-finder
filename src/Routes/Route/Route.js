@@ -15,6 +15,7 @@ import MyBuyers from "../../Pages/MyBuyers/MyBuyers";
 import MyOrders from "../../Pages/MyOrders/MyOrders";
 import MyProducts from "../../Pages/MyProducts/MyProducts";
 import NotFound from "../../Pages/NotFound/NotFound";
+import Pay from "../../Pages/Pay/Pay";
 import Products from "../../Pages/Products/Products/Products";
 import Register from "../../Pages/Register/Register/Register";
 import ReportedItem from "../../Pages/ReportedItem/ReportedItem";
@@ -56,7 +57,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/category/:id',
                 element: <PrivateRoute><Products></Products></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://car-server-snowy.vercel.app/category/${params.id}`)
 
 
             }
@@ -102,6 +103,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/dashboard/reporteditem',
                 element: <ReportedItem></ReportedItem>
+            },
+            {
+                path: '/dashboard/pay/:id',
+                element: <Pay></Pay>,
+                loader: ({ params }) => fetch(`https://car-server-snowy.vercel.app/booking/${params.id}`)
             },
 
         ]

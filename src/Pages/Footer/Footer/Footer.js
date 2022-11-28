@@ -12,13 +12,13 @@ const Footer = () => {
 
 
             <Row >
-                <Col className='mt-4'>
+                <Col sm={12} lg={4} className='mt-4'>
                     <Card.Title className='mb-4 text-white'>Brand Of Car</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">Toyota</Card.Subtitle>
                     <Card.Subtitle className="mb-2 text-muted">Tesla</Card.Subtitle>
                     <Card.Subtitle className="mb-2 text-muted">BMW</Card.Subtitle>
                 </Col>
-                <Col className='mt-4'>
+                <Col sm={12} lg={4} className='mt-4'>
                     <Card.Title className='mb-4 text-white'>Follow Us</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">
                         <Link ><FaFacebook></FaFacebook></Link>
@@ -32,7 +32,7 @@ const Footer = () => {
                     </Card.Subtitle>
                     <h6 className=''>Copyright 2022</h6>
                 </Col>
-                <Col className='mt-4'>
+                <Col sm={12} lg={4} className='mt-4'>
                     <Card.Title className='mb-4 text-white'>Car Finder</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">Privacy Policy</Card.Subtitle>
                     <Card.Subtitle className="mb-2 text-muted">About Us</Card.Subtitle>

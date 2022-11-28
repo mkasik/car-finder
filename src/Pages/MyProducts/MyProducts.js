@@ -11,7 +11,7 @@ const MyProducts = () => {
     const [advertises, setAdvertises] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/data')
+        fetch('https://car-server-snowy.vercel.app/data')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
@@ -25,7 +25,7 @@ const MyProducts = () => {
         }
 
 
-        fetch('http://localhost:5000/advertise', {
+        fetch('https://car-server-snowy.vercel.app/advertise', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -47,7 +47,7 @@ const MyProducts = () => {
         console.log(id)
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            fetch(`http://localhost:5000/data/${id}`, {
+            fetch(`https://car-server-snowy.vercel.app/data/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -63,7 +63,7 @@ const MyProducts = () => {
         }
     }
     // useEffect(() => {
-    //     fetch('http://localhost:5000/advertise')
+    //     fetch('https://car-server-snowy.vercel.app/advertise')
     //         .then(res => res.json())
     //         .then(data => setAdvertises(data))
     // }, [])

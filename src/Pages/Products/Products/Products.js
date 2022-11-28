@@ -13,7 +13,7 @@ const Products = () => {
     // console.log("new category", newCategory)
     // const [products, setProducts] = useState([]);
     // useEffect(() => {
-    //     fetch('http://localhost:5000/data')
+    //     fetch('https://car-server-snowy.vercel.app/data')
     //         .then(res => res.json())
     //         .then(data => setProducts(data))
     // }, [])

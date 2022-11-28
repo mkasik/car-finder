@@ -53,7 +53,7 @@ const Login = () => {
     }
     const saveuser = (name, email, role) => {
         const user = { name, email, role }
-        fetch('http://localhost:5000/users', {
+        fetch('https://car-server-snowy.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -70,20 +70,20 @@ const Login = () => {
         <div className='login-bg'>
             <Container>
                 <Row >
-                    <Col>
-                        <Form onSubmit={handleSubmit} className='w-50  mt-4 bdr '>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Col sm={1} lg={6} className="tt" >
+                        <Form onSubmit={handleSubmit} className='w-50  mt-4 bdr tt '>
+                            <Form.Group className="mb-3 log-text tt" controlId="formBasicEmail">
                                 <Form.Label className='text-white'>Email address</Form.Label>
                                 <Form.Control type="email" placeholder="Enter email" name='email' />
 
                             </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Group className="mb-3  log-text2" controlId="formBasicPassword">
                                 <Form.Label className='text-white'>Password</Form.Label>
                                 <Form.Control type="password" placeholder="Password" name='password' />
                             </Form.Group>
 
-                            <Button className='w-100' variant="primary" type="submit">
+                            <Button className='w-100 log-text2' variant="primary" type="submit">
                                 Login
                             </Button>
 
@@ -94,7 +94,7 @@ const Login = () => {
                                 New to Car finder? <Link className='text' to={'/register'}>Register</Link>
                             </Form.Group>
                         </Form></Col>
-                    <Col><img alt='' src={img}></img></Col>
+                    <Col><img className='log-img' alt='' src={img}></img></Col>
                 </Row>
 
             </Container>

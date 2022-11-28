@@ -32,7 +32,7 @@ const Product = ({ car }) => {
 
     const saveBooking = (productName, productImg, price, userName, email, number, meetingLocation) => {
         const user = { productName, productImg, price, userName, email, number, meetingLocation }
-        fetch('http://localhost:5000/booking', {
+        fetch('https://car-server-snowy.vercel.app/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -55,7 +55,7 @@ const Product = ({ car }) => {
     const handleReport = (name, price, seller) => {
         console.log("Test click", name, price, seller)
         const report = { name, price, seller }
-        fetch('http://localhost:5000/reports', {
+        fetch('https://car-server-snowy.vercel.app/reports', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

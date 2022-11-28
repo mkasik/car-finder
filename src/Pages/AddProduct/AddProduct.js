@@ -35,7 +35,7 @@ const AddProduct = () => {
             resalePrice
 
         }
-        fetch('http://localhost:5000/data', {
+        fetch('https://car-server-snowy.vercel.app/data', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -78,6 +78,12 @@ const AddProduct = () => {
                     <Form.Control className='w-50' type="text" placeholder="Photo Link " name="photoLink" />
                     <Form.Control className='w-50' type="text" placeholder="Use Of Year" name="useYear" />
                 </Form.Group>
+                <Form.Select className='text-muted' aria-label="Default select example">
+                    <option>Condition Type</option>
+                    <option value="1">Excellent</option>
+                    <option value="2">Good</option>
+                    <option value="3">Fair</option>
+                </Form.Select>
                 {/* <Form.Group className="mb-1 d-flex gap-2" >
                     <Form.Select className='w-50' aria-label="Default select example">
                         <option>Select Category</option>

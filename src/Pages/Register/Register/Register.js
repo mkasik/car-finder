@@ -43,7 +43,7 @@ const Register = () => {
     }
     const saveuser = (name, email, role) => {
         const user = { name, email, role }
-        fetch('http://localhost:5000/users', {
+        fetch('https://car-server-snowy.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -60,10 +60,10 @@ const Register = () => {
         <div className='register-bg'>
 
             <Row>
-                <Col>
-                    <img src={img} alt=''></img>
+                <Col sm={12} lg={6}>
+                    <img className='log-img' src={img} alt=''></img>
                 </Col>
-                <Col className='mt-2'>
+                <Col sm={12} lg={6} className='mt-2 text-center'>
                     {/* <Form onSubmit={handleSubmit} className='w-50   '>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Name</Form.Label>

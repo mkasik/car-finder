@@ -6,7 +6,7 @@ import { FaTrashAlt } from 'react-icons/fa';
 const AllSellers = () => {
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://car-server-snowy.vercel.app/users')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])
@@ -17,7 +17,7 @@ const AllSellers = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            fetch(`http://localhost:5000/users/${id}`, {
+            fetch(`https://car-server-snowy.vercel.app/users/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

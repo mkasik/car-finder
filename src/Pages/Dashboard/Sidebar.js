@@ -14,7 +14,7 @@ const Sidebar = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://car-server-snowy.vercel.app/users')
             .then(res => res.json())
             .then(data => setUsers(data));
     }, [])
@@ -34,7 +34,7 @@ const Sidebar = () => {
 
             {
                 data[0]?.role === "user" ? <Buyer></Buyer> : data[0]?.role === "seller" ? <Seller></Seller>
-                    : data[0]?.role === "admin" ? <Admin></Admin> : <h2 className='text-white'>Server Crashed</h2>
+                    : data[0]?.role === "admin" ? <Admin></Admin> : <h2 className='text-white'>Loading...</h2>
             }
 
 

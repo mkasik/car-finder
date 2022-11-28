@@ -5,7 +5,7 @@ import { FaTrashAlt } from 'react-icons/fa';
 const ReportedItem = () => {
     const [reports, setReports] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/reports')
+        fetch('https://car-server-snowy.vercel.app/reports')
             .then(res => res.json())
             .then(data => setReports(data))
     }, [])

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 
@@ -7,12 +8,17 @@ const MyOrders = () => {
     const { user } = useContext(AuthContext);
     console.log('email address:', user.email)
     const [orders, setOrders] = useState([]);
+
+
     useEffect(() => {
-        fetch('http://localhost:5000/booking')
+        fetch('https://car-server-snowy.vercel.app/booking')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
     const order = orders.filter(odr => odr.email === user.email)
+
+
+
     return (
         <div>
             {
@@ -37,7 +43,7 @@ const MyOrders = () => {
                                 <td><img className='round me-4' height={30} alt='' src={booking.productImg}></img></td>
                                 <td className='me-4'>{booking.productName}</td>
                                 <td>{booking.price}</td>
-                                <td><Button>Pay</Button></td>
+                                <td><Link to={`/dashboard/pay/${booking._id}`}><Button  >Pay</Button></Link></td>
                             </tr>
                         )
                     }

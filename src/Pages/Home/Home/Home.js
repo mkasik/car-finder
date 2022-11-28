@@ -5,7 +5,7 @@ import img2 from './two.jpg';
 import img3 from './three.jpg';
 import './Home.css'
 import Category from '../../Category/Category/Category';
-import Products from '../../Products/Products/Products';
+
 import Advertise from '../../Advertise/Advertise';
 import Testimonial from '../../Testimonial/Testimonial';
 
@@ -15,13 +15,13 @@ import Testimonial from '../../Testimonial/Testimonial';
 const Home = () => {
     const [categorys, setCategorys] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/category')
+        fetch('https://car-server-snowy.vercel.app/category')
             .then(res => res.json())
             .then(data => setCategorys(data))
     }, [])
     const [advertises, setAdvertises] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/advertise')
+        fetch('https://car-server-snowy.vercel.app/advertise')
             .then(res => res.json())
             .then(data => setAdvertises(data))
     }, [])

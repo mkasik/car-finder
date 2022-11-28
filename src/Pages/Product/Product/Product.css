@@ -14,3 +14,11 @@
     background-image: url(https://www.innofication.com/assets/plugins/sky-forms/version-2.0.1/img/bg-purple.jpg);
     background-size: cover;
 }
+
+@media only screen and (max-width: 600px) {
+
+    .car-img {
+        width: 250px;
+    }
+
+}

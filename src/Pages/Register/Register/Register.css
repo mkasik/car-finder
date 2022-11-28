@@ -3,3 +3,14 @@
     height: 500px;
     background-size: cover;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .text-center {
+        margin-left: 70px;
+    }
+
+
+
+
+}
