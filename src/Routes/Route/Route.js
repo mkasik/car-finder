@@ -107,7 +107,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/dashboard/pay/:id',
                 element: <Pay></Pay>,
-                loader: ({ params }) => fetch(`https://car-server-snowy.vercel.app/booking/${params.id}`)
+                loader: ({ params }) => fetch(`https://car-server-mkasik.vercel.app/booking/${params.id}`)
             },
 
         ]
