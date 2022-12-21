@@ -109,7 +109,7 @@ const Product = ({ car }) => {
                 </Row>
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>You can book now</Modal.Title>
+                        <Modal.Title>You Can Book Now</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form onSubmit={handleBooking}>
