@@ -21,7 +21,7 @@ const Testimonial = () => {
                             <Row className='w-100'>
                                 <Col><Card.Img className='review-img w-25' variant="top" src="https://media.istockphoto.com/photos/smiling-man-outdoors-in-the-city-picture-id1179420343?b=1&k=20&m=1179420343&s=612x612&w=0&h=c9Z3DyUg-YvgOQnL_ykTIgVTWXjF-GNo4FUQ7i5fyyk=" /></Col>
 
-                                <h4 className='text-muted'>David</h4>
+                                <h4 className='text-muted'>Daviid</h4>
                             </Row>
 
                         </Col>
