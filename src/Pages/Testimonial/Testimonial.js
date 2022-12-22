@@ -12,7 +12,7 @@ const Testimonial = () => {
                     <Row className='mt-4'>
                         <Col sm={12} lg={4} className='p-4'>
                             <Card.Text>
-                                Forget about struggling to do everything at once: taking care of the family, cleaning the house, doing the shopping, etc.
+                                Forget about struggling to do everything at once: taking care of the family, cleaning the house, doing the shopping, and etc.
 
 
                             </Card.Text>
